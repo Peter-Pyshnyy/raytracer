@@ -3,17 +3,30 @@
 #include "color.h"
 
 int main(){
-    int width = 256;
-    int height = 256;
+    int img_width = 400;
+    double aspect_ratio = 16. / 9.;
+    int img_height = int(img_width / aspect_ratio);
+    img_height = (img_height < 1) ? 1 : img_height;
 
-    std::cout << "P3\n" << width << ' ' << height << "\n255 \n";
+    auto vp_height = 2.0; //viewport
+    auto vp_width = vp_height * double(img_width) / img_height;
+    auto focal_length = 1.;
+    vec3 vp_u(vp_width, 0, 0);
+    vec3 vp_v(0, -vp_height, 0);
+    vec3 vp_delta_u = vp_u / img_width;
+    vec3 vp_delta_v = vp_v / img_height;
+    point3 camera_center(0, 0, 0);
+    auto left_upper_corner = camera_center - vec3(0, 0, focal_length) - (vp_u / 2) - (vp_v / 2);
+    point3 vp_pos00 = left_upper_corner + (vp_delta_u / 2) + (vp_delta_v / 2);
 
-    for (int i = 0; i < height; i++) {
-        std::clog << (100 * i / height) << "% \n" << std::flush;
-        for (int j = 0; j < width; j++) {
-            float wt = float(i) / float(width - 1);
-            float ht = float(j) / float(height - 1);
-            color col(wt, ht, 1-ht);
+    std::cout << "P3\n" << img_width << ' ' << img_height << "\n255 \n";
+
+    for (int i = 0; i < img_height; i++) {
+        std::clog << (100 * i / img_height) << "% \n" << std::flush;
+        for (int j = 0; j < img_width; j++) {
+            float wt = float(i) / float(img_width - 1);
+            float ht = float(j) / float(img_height - 1);
+            color col(0.5, 0.5, 1);
             set_pixel(std::cout, col);
         }
     }
