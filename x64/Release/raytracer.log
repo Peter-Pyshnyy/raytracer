@@ -1,7 +1,11 @@
 ﻿  raytracer.cpp
+C:\Users\Petya\Desktop\Informatik\CG\weekend\raytracer\raytracer.cpp(15,62): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Petya\Desktop\Informatik\CG\weekend\raytracer\raytracer.cpp(27,15): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Petya\Desktop\Informatik\CG\weekend\raytracer\raytracer.cpp(28,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Petya\Desktop\Informatik\CG\weekend\raytracer\raytracer.cpp(32,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   Generating code
-  1 of 18 functions ( 5.6%) were compiled, the rest were copied from previous compilation.
+  2 of 30 functions ( 6.7%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  raytracer.vcxproj -> E:\Programming\CG\weekend\raytracer\x64\Release\raytracer.exe
+  raytracer.vcxproj -> C:\Users\Petya\Desktop\Informatik\CG\weekend\raytracer\x64\Release\raytracer.exe

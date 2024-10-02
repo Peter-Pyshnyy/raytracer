@@ -20,6 +20,7 @@ public:
 	vec3 operator*(const vec3& v) const;
 	vec3 operator/(const vec3& v) const;
 	vec3 operator*(float n) const;
+	vec3 operator/(float n) const;
 	vec3 operator-() const;
 	vec3& operator+=(const vec3& v);
 	vec3& operator-=(const vec3& v);

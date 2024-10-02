@@ -46,6 +46,15 @@ vec3 vec3::operator*(float n) const {
 	return result;
 }
 
+vec3 vec3::operator/(float n) const {
+	vec3 result;
+	result.e[0] = e[0] / n;
+	result.e[1] = e[1] / n;
+	result.e[2] = e[2] / n;
+
+	return result;
+}
+
 vec3 vec3::operator-() const{
 	return vec3(-e[0], -e[1], -e[2]);
 }
